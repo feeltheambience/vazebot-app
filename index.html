@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Ваза</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Main screen -->
+        <div id="screen-main" class="screen active">
+            <div class="vase-container">
+                <canvas id="vase-canvas"></canvas>
+                <div id="vase-counter" class="vase-counter">0 / 25</div>
+            </div>
+            <button id="btn-add" class="btn-primary">
+                <span class="btn-icon">+</span>
+                Добавить монетку
+            </button>
+        </div>
+
+        <!-- Add coin screen -->
+        <div id="screen-add" class="screen">
+            <div class="add-header">
+                <button id="btn-back" class="btn-back">&larr;</button>
+                <h2>Что ты сделал(а)?</h2>
+            </div>
+            <p class="add-hint">Любое действие — даже мелочь имеет значение</p>
+            <input type="text" id="coin-text" class="input-text" placeholder="Например: выпил воды" maxlength="100" autocomplete="off">
+
+            <h3 class="color-title">Выбери цвет</h3>
+            <div id="color-grid" class="color-grid"></div>
+
+            <button id="btn-save" class="btn-primary btn-save" disabled>
+                Сохранить
+            </button>
+        </div>
+
+        <!-- Success overlay -->
+        <div id="overlay-success" class="overlay">
+            <div class="success-content">
+                <div class="success-coin" id="success-coin"></div>
+                <p class="success-text">Записано!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
